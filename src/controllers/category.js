@@ -5,11 +5,11 @@ const createCategory = async(req, res) => {
     const category = req.body
     try {
         await Category.createCategory(category.name)
-        res.status(200).json({
+        return res.status(200).json({
             message: 'Category added successfully'
         })
     } catch (error) {
-        res.status(500).json(error)
+        return res.status(500).json(error)
     }
 }
 
@@ -17,11 +17,11 @@ const getCategories = async(req, res) => {
     const category = req.body
     try {
         const categories = await Category.getCategories()
-        res.status(200).json({
+        return res.status(200).json({
             message: categories[0]
         })
     } catch (error) {
-        res.status(500).json(error)
+        return res.status(500).json(error)
     }
 }
 
@@ -38,7 +38,7 @@ const updateName = async(req, res) => {
             message: "Category updated succesfully"
         })
     } catch (error) {
-        res.status(500).json(error)
+        return res.status(500).json(error)
     }
 }
 

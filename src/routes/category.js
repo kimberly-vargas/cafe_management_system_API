@@ -8,8 +8,8 @@ const {
 } = require("../controllers/category")
 const router = express.Router();
 
-router.post('/createCategory', auth.authenticateToken, checkrole.checkrole, createCategory)
-router.get('/getAllCategories', auth.authenticateToken, getCategories)
+router.post('/create', auth.authenticateToken, checkrole.checkrole, createCategory)
+router.get('/getAll', auth.authenticateToken, getCategories)
 router.patch('/updateName', auth.authenticateToken, updateName)
 
 module.exports = router;
